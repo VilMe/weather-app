@@ -16,3 +16,10 @@ def get_weather(city_name: str, mock: bool = True) -> dict:
 
         # request live data
         payload: dict = {'q': city_name, 'appid': API_key, 'units': 'metric'}
+        request = requests.get(url=BASE_URL, params=payload)
+        data: dict = request.json
+
+        return data
+    
+
+    
