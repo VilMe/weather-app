@@ -22,4 +22,5 @@ def get_weather(city_name: str, mock: bool = True) -> dict:
         return data
     
 
-    
+if __name__ == '__main__':
+    print(get_weather('tokyo', mock=False))
