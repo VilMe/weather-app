@@ -14,12 +14,15 @@ def get_weather(city_name: str, mock: bool = True) -> dict:
             return json.load(file)
         
 
-        # request live data
-        payload: dict = {'q': city_name, 'appid': API_key, 'units': 'metric'}
-        request = requests.get(url=BASE_URL, params=payload)
-        data: dict = request.json
+    # request live data
+    payload: dict = {'q': city_name, 'appid': API_key, 'units': 'metric'}
+    request = requests.get(url=BASE_URL, params=payload)
+    data: dict = request.json
 
-        return data
+    with open('dummy_data.json', 'w') as file:
+        json.dum(data, file)
+
+    return data
     
 
 if __name__ == '__main__':
