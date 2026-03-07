@@ -20,7 +20,7 @@ def get_weather(city_name: str, mock: bool = True) -> dict:
     data: dict = request.json
 
     with open('dummy_data.json', 'w') as file:
-        json.dum(data, file)
+        json.dump(data, file)
 
     return data
     
