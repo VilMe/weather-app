@@ -25,5 +25,12 @@ def get_weather(city_name: str, mock: bool = True) -> dict:
     return data
     
 
+def get_weather_details(weather: dict) -> list[Weather]:
+    days: list[dict] = weather.get('list')
+
+    if not days:
+        raise Exception(f'Problem with json: {weather}')
+
+
 if __name__ == '__main__':
     print(get_weather('tokyo', mock=False))
