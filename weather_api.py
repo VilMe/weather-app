@@ -40,6 +40,10 @@ def get_weather_details(weather: dict) -> list[Weather]:
                              temp=details.get('temp'),
                              weather=(weather := day.get('weather')),
                              description=weather[0].get('descripton'))
+        list_of_weather.append(w)
+
+
+    return list_of_weather
 
 
 if __name__ == '__main__':
