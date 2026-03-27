@@ -2,6 +2,7 @@ from typing import Final
 from model import Weather, dt
 import os
 import requests
+import json
 
 
 
@@ -16,9 +17,9 @@ def get_weather(city_name: str, mock: bool = True) -> dict:
         
 
     # request live data
-    payload: dict = {'q': city_name, 'appid': API_key, 'units': 'metric'}
+    payload: dict = {'q': city_name, 'appid': API_KEY, 'units': 'metric'}
     request = requests.get(url=BASE_URL, params=payload)
-    data: dict = request.json
+    data: dict = request.json()
 
     with open('dummy_data.json', 'w') as file:
         json.dump(data, file)
@@ -47,9 +48,8 @@ def get_weather_details(weather: dict) -> list[Weather]:
 
 
 if __name__ == '__main__':
-    current_weathe: dict = get_weather('tokyo', mock=True)
+    # current_weather: dict = get_weather('tokyo', mock=True)
     print(get_weather('tokyo', mock=False))
 
 
 
-    
