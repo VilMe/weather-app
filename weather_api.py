@@ -40,7 +40,7 @@ def get_weather_details(weather: dict) -> list[Weather]:
                              details=(details := day.get('main')),
                              temp=details.get('temp'),
                              weather=(weather := day.get('weather')),
-                             description=weather[0].get('descripton'))
+                             description=weather[0].get('description'))
         list_of_weather.append(w)
 
 
@@ -52,7 +52,8 @@ if __name__ == '__main__':
 
     weather: list[Weather] = get_weather_details(current_weather)
 
-    
+    for w in weather:
+        print(w)
     # print(get_weather('tokyo', mock=True))
 
 
