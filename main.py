@@ -1,9 +1,4 @@
-from typing import Final
-import os
+from weather_api import get_weather, get_weather_details
 
-
-
-
-API_KEY: Final[str] = os.environ['OPEN_WEATHER_API_KEY']
-BASE_URL: Final[str] = 'https://api.openweathermap.org/data/2.5/forecast'
-
+def main():
+    user_city: str = imput()
