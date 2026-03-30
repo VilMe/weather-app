@@ -49,7 +49,7 @@ def get_weather_details(weather: dict) -> list[Weather]:
 
 if __name__ == '__main__':
     # current_weather: dict = get_weather('tokyo', mock=True)
-    print(get_weather('tokyo', mock=False))
+    print(get_weather('tokyo', mock=True))
 
 
 
