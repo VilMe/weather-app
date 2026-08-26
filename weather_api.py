@@ -48,6 +48,7 @@ def get_weather_details(weather: dict) -> list[Weather]:
 
 
 
+
 # for testing of weather API
 # if __name__ == '__main__':
 #     current_weather: dict = get_weather('tokyo', mock=True)
