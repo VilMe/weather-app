@@ -31,6 +31,7 @@ def get_weather_details(weather: dict) -> list[Weather]:
     days: list[dict] = weather.get('list')
 
     if not days:
+        # raise an error/exception if there is a problem with data or no data 
         raise Exception(f'Problem with json: {weather}')
     
 
@@ -50,13 +51,14 @@ def get_weather_details(weather: dict) -> list[Weather]:
 
 
 # for testing of weather API
-# if __name__ == '__main__':
-#     current_weather: dict = get_weather('tokyo', mock=True)
+if __name__ == '__main__':
+    current_weather: dict = get_weather('tokyo', mock=True)
 
-#     weather: list[Weather] = get_weather_details(current_weather)
+    weather: list[Weather] = get_weather_details(current_weather)
 
-#     for w in weather:
-#         print(w.temp, w.details)
+    for w in weather:
+        # print(w)
+        print(w.temp, w.details)
     # print(get_weather('tokyo', mock=True))
 
 

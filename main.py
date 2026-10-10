@@ -1,4 +1,8 @@
-from weather_api import get_weather, get_weather_details
+from weather_api import get_weather, get_weather_details, Weather
 
 def main():
-    user_city: str = input()
+    user_city: str = input('Enter a city: ')
+
+    # Get the current weather details
+    current_weathere: dict = get_weather(user_city, mock=True)
+    weather_details: list[Weather] = get_weather_details(current_weather)
