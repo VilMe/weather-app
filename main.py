@@ -13,6 +13,16 @@ def main():
     print(days)
 
 
+    for day in days:
+        print(day)
+        print('---')
+
+        grouped: list[Weather] = [current for current in weather_details if f'{current.date:{dfmt}}' == day]
+        for element in grouped:
+            print(element)
+
+        print(' ')
+
 
 if __name__ == '__main__':
     main()
