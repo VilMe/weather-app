@@ -9,4 +9,10 @@ def main():
 
     # Get the current days
     dfmt: str = '%d/%m/%y'
-    days: list[str] = (list({f'{date.date:{dfmt}}' for date in weather_details}))
+    days: list[str] = sorted(list({f'{date.date:{dfmt}}' for date in weather_details}))
+    print(days)
+
+
+
+if __name__ == '__main__':
+    main()
